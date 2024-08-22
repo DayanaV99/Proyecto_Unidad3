@@ -1,0 +1,49 @@
+h4{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  gap: 20px; /* Espacio entre la imagen y la tarjeta */
+  margin: 20px;
+}
+
+.left-image img {
+  width: 100%; /* Asegura que la imagen izquierda ocupe todo el espacio disponible */
+  height: auto;
+  border-radius: 8px; /* Bordes redondeados opcionales */
+}
+
+.right-card {
+  flex: 1; /* Permite que la tarjeta ocupe el espacio restante */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.card-content p {
+  margin: 10px 0 0 0;
+  line-height: 1.6;
+}
