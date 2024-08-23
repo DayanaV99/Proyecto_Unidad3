@@ -1,1 +1,100 @@
-<p>contacto works!</p>
+<!-- contacto.component.html -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4" >Contacto</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card rounded-4 shadow-sm">
+                <div class="card-body">
+                    <form>
+                        <h4>Escríbenos</h4>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" name="nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo a enviar</label>
+                            <input type="email" class="form-control" id="correo" [(ngModel)]="email" name="correo" placeholder="Correo a enviar" [value]="defaultEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" [(ngModel)]="mensaje" name="mensaje" placeholder="Mensaje" rows="3" required></textarea>
+                        </div>
+                        <button type="button" class="btn btn-secondary" (click)="sendGmail()">Enviar por Gmail</button>
+                        <button type="button" class="btn btn-primary" (click)="sendHotmail()">Enviar por Hotmail</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card rounded-4 shadow-sm">
+                <div class="card-body">
+                    <h4>Información de Contacto</h4>
+                    <p>Dirección: {{ direccion }}</p>
+                    <p>Teléfono: {{ telefono }}</p>
+                    <p>Email: {{ email }}</p>
+                    <p><strong>¿Dudas?</strong> {{ mensajeDudas }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Reseñas</h2>
+    <div class="row">
+        <!-- Formulario para escribir una reseña -->
+        <div class="col-md-6">
+            <div class="card rounded-4 shadow-sm">
+                <div class="card-body">
+                    <form (ngSubmit)="addReview()">
+                        <div class="mb-3">
+                            <label for="resenaNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="resenaNombre" [(ngModel)]="newReview.name" name="resenaNombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="resenaTitulo" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="resenaTitulo" [(ngModel)]="newReview.title" name="resenaTitulo" placeholder="Título de la reseña" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="resenaTexto" class="form-label">Reseña</label>
+                            <textarea class="form-control" id="resenaTexto" [(ngModel)]="newReview.text" name="resenaTexto" placeholder="Reseña" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="resenaRating" class="form-label">Rating</label>
+                            <select class="form-select" id="resenaRating" [(ngModel)]="newReview.rating" name="resenaRating" required>
+                                <option value="" disabled>Selecciona estrellas</option>
+                                <option *ngFor="let star of [1, 2, 3, 4, 5]" [value]="star">{{ star }} estrellas</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección para mostrar las reseñas -->
+        <div class="col-md-6">
+            <div class="review-container mb-3">
+                <div class="d-flex flex-column">
+                    <div class="card rounded-4 shadow-sm mb-3" *ngFor="let resena of getPagedResenas()">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ resena.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ resena.reviewerName }} - {{ resena.date }}</h6>
+                            <p class="card-text">{{ resena.body }}</p>
+                            <footer class="blockquote-footer">Rating: <cite>{{ resena.rating }} estrellas</cite></footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Botones de navegación -->
+            <div class="d-flex justify-content-between align-items-center mb-3 fixed-nav-buttons">
+                <button class="btn btn-secondary" (click)="previousPage()" [disabled]="currentPage === 0">← Anterior</button>
+                <button class="btn btn-secondary" (click)="nextPage()" [disabled]="currentPage >= (resenas.length / itemsPerPage) - 1">Siguiente →</button>
+            </div>
+        </div>
+    </div>
+</div>
+
