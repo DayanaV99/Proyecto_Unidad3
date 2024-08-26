@@ -39,15 +39,20 @@
 
 
 /* Estilo para el enlace activo */
-.active-link {
-    color:  #351dc0;
-    border-bottom: 2px solid  #351dc0;
-}
-
 @media (max-width: 768px) {
-    nav ul {
+    .navbar {
         flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
         align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
     }
 }
 
@@ -90,9 +95,9 @@
 }
 
 /* Responsivo para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .footer {
-        padding: 15px;
+        padding: 10px;
         text-align: center;
     }
 
@@ -105,6 +110,7 @@
         font-size: 12px;
     }
 }
+
 
 
 /* LOGO */
@@ -124,4 +130,15 @@
     font-weight: bold; /* Haz que el texto sea más prominente */
     color: #333; /* Color del texto */
   }
+
+  @media (max-width: 480px) {
+    .logo img {
+        width: 80px; /* Tamaño más pequeño del logo en pantallas muy pequeñas */
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+}
+
   

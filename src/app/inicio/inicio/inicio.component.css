@@ -1,4 +1,4 @@
-h4, h3{
+h4,h3{
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
@@ -25,13 +25,19 @@ h4, h3{
   flex-direction: column;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden; /* Asegura que el contenido no se desborde */
+  font-size: 14px;
+
 }
 
 .card-image {
   width: 100%;
   height: auto;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al hacer hover */
 }
 
 .card-content {
@@ -53,4 +59,98 @@ p{
   text-align: justify;
 }
 
+/* INFORMACION ESTILOS */
+.custom-card-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 20px;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
+  border: 5px;
+}
 
+.custom-card {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 20%;
+  padding: 20px;
+}
+
+.custom-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+.custom-card h3 {
+  margin-top: 0;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.custom-card p {
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
+  font-size: 14px;
+}
+
+.custom-card img {
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Asegura que la imagen se ajuste dentro del círculo sin deformarse */
+  margin-bottom: 15px;
+  transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+/* Animación al hacer hover */
+.custom-card:hover {
+  transform: translateY(-10px); /* Eleva la tarjeta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.custom-card:hover img {
+  transform: scale(1.1); /* Zoom de la imagen al hacer hover */
+}
+
+/* Animación de aparición */
+@keyframes custom-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-card {
+  animation: custom-fadeInUp 0.5s ease-out;
+}
+
+
+/* UBICACION ESTILOS */
+.map-container {
+  margin: 20px auto;
+  max-width: 1200px; /* Ajusta el ancho máximo del mapa */
+  height: 450px; /* Ajusta la altura del mapa */
+  border-radius: 8px; /* Opcional: Bordes redondeados */
+  overflow: hidden; /* Asegura que el mapa se ajuste a los bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Elimina el borde del iframe */
+}
