@@ -1,17 +1,17 @@
 
 .review-container {
-    max-height: 500px; /* Ajusta el alto máximo según sea necesario */
-    overflow-y: auto;  /* Habilita el scroll si el contenido supera el alto máximo */
-    margin-bottom: 60px; /* Asegura que no se superpongan con los botones */
+    max-height: 500px; 
+    overflow-y: auto;  
+    margin-bottom: 60px; 
 }
 
 .fixed-nav-buttons {
-    position: sticky; /* Hace que el contenedor de los botones se quede en su lugar */
+    position: sticky; 
 
-    background-color: white; /* Fondo blanco para el contenedor de los botones */
+    background-color: white; 
     padding: 10px;
-    z-index: 10; /* Asegura que esté encima de otros contenidos */
-    border-top: 1px solid #ddd; /* Añade una línea de separación opcional */
+    z-index: 10;
+    border-top: 1px solid #ddd; 
 }
 
 
