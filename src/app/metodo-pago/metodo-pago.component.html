@@ -1,1 +1,50 @@
-<p>metodo-pago works!</p>
+<div class="sistema-de-pago">
+    <h2>SISTEMA DE PAGO</h2>
+    <p>FÁCIL Y RÁPIDO ALQUILA TU BARCO EN MINUTOS</p>
+    <form #paymentForm="ngForm">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" name="nombre" placeholder="Nombre" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" class="form-control" id="apellido" [(ngModel)]="apellido" name="apellido" placeholder="Apellido" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="ciudad">Ciudad</label>
+        <input type="text" class="form-control" id="ciudad" [(ngModel)]="ciudad" name="ciudad" placeholder="Ciudad" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="codigo-postal">Código Postal</label>
+        <input type="text" class="form-control" id="codigo-postal" [(ngModel)]="codigoPostal" name="codigoPostal" placeholder="Código Postal" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="pais">País</label>
+        <input type="text" class="form-control" id="pais" [(ngModel)]="pais" name="pais" placeholder="País" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="numero-tarjeta">Número de tarjeta</label>
+        <input type="text" class="form-control" id="numero-tarjeta" [(ngModel)]="numeroTarjeta" name="numeroTarjeta" placeholder="Número de tarjeta" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" class="form-control" id="cvv" [(ngModel)]="cvv" name="cvv" placeholder="CVV" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="monto-a-pagar">Monto a Pagar</label>
+        <input type="text" class="form-control" id="monto-a-pagar" [(ngModel)]="montoAPagar" name="montoAPagar" placeholder="Monto a Pagar" required>
+      </div>
+  
+      <div class="form-group">
+        <button type="button" (click)="regresar()">REGRESAR</button>
+        <button type="button" class="btn btn-primary" (click)="pagar()">PAGAR</button>
+      </div>
+    </form>
+</div>

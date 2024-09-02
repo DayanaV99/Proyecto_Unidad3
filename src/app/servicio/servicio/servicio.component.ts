@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ServicioModule } from '../servicio.module';
+import { Router } from '@angular/router'; // Importar Router para la navegación
 
 @Component({
   selector: 'app-servicio',
@@ -94,6 +95,8 @@ export class ServicioComponent {
     }
   ];
 
+  constructor(private router: Router) {} // Inyectar el Router
+
   ngOnInit() {
     this.startCarousel();
   }
@@ -102,5 +105,10 @@ export class ServicioComponent {
     setInterval(() => {
       this.currentImageIndex = (this.currentImageIndex + 1) % this.carouselImages.length;
     }, 3000); // Cambia cada 3 segundos
+  }
+
+  // Método para redirigir a la página de método de pago
+  goToMetodoPago() {
+    this.router.navigate(['/metodo-pago']); // Navega a la ruta especificada
   }
 }
