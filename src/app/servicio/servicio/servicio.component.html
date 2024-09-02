@@ -1,1 +1,33 @@
-<p>servicio works!</p>
+<!-- Carrusel -->
+<div class="carousel">
+    <img [src]="carouselImages[currentImageIndex]" alt="Imagen del Carrusel">
+</div>
+
+<!-- Sección: Conoce nuestra flota -->
+<div class="fleet-section">
+    <h2>CONOCE NUESTRA FLOTA - ELIGE TU BARCO IDEAL</h2>
+    <div class="fleet-gallery">
+        <div class="fleet-item" *ngFor="let item of fleetItems">
+            <img [src]="item.image" alt="Flota">
+            <div class="overlay">
+                <div class="text">{{ item.title }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sección: ¡Embarcate hoy mismo! -->
+<div class="rental-section">
+    <h2>¡EMBÁRCATE HOY MISMO! ALQUILA EL BARCO DE TUS SUEÑOS</h2>
+    <div class="rental-cards-wrapper">
+        <div class="rental-cards">
+            <div class="rental-card" *ngFor="let rental of rentalOptions">
+                <img [src]="rental.image" alt="Barco">
+                <h3>{{ rental.title }}</h3>
+                <p>{{ rental.description }}</p>
+                <div class="price">{{ rental.price }}</div>
+                <button>Embarca Hoy</button>
+            </div>
+        </div>
+    </div>
+</div>
