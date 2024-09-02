@@ -1,20 +1,30 @@
-
 .review-container {
     max-height: 500px; 
     overflow-y: auto;  
     margin-bottom: 60px; 
+    min-height: 500px; /* Establece una altura mínima */
+    
 }
 
 .fixed-nav-buttons {
     position: sticky; 
-
+    bottom: 0; 
     background-color: white; 
     padding: 10px;
     z-index: 10;
     border-top: 1px solid #ddd; 
+    width: 100%; 
 }
-
 
 :host {
     font-family: 'Poppins', sans-serif;
   }
+
+  .card {
+    transition: transform 0.3s ease; /* Suaviza la transición */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Agranda la tarjeta al 105% cuando pasas el mouse por encima */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al hacer hover */
+}
