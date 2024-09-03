@@ -27,7 +27,6 @@ export class ServicioComponent {
     { image: '../../img/yate.jpg', title: 'Yate de lujo' },
     { image: '../../img/lancha.jpg', title: 'Barco deportivo' },
     { image: '../../img/inflable.jpg', title: 'Bote inflable' },
-    { image: '../../img/velero.jpg', title: 'Velero' },
     { image: '../../img/pesca.jpg', title: 'Barco de pesca' }
   ];
 
@@ -36,25 +35,25 @@ export class ServicioComponent {
     {
       image: '../../img/yate1.jpg',
       title: 'YATE DE LUJO SUEÑO DORADO',
-      description: 'Disfruta de un día de lujo y elegancia a bordo del "YATE DE LUJO SUEÑO DORADO". Con todas las comodidades y servicios de primera clase, este yate es perfecto para celebraciones especiales y eventos exclusivos en el mar.',
+      description:'Vive un día de lujo y elegancia a bordo del YATE DE LUJO SUEÑO DORADO. Con comodidades y servicios de primera clase, ideal para celebraciones y eventos exclusivos en el mar',
       price: '$3,000 POR DÍA'
     },
     {
       image: '../../img/lancha1.jpg',
       title: 'VELOCIDAD SUPREMA',
-      description: 'Siente la emoción del viento en tu rostro y la velocidad bajo tus pies con "VELOCIDAD SUPREMA". Ideal para los amantes de los deportes acuáticos y las aventuras rápidas, esta lancha te garantiza un día lleno de diversión y adrenalina.',
+      description: 'Experimenta la emoción y velocidad con "VELOCIDAD SUPREMA". Perfecta para los amantes de los deportes acuáticos y la adrenalina, esta lancha promete un día lleno de diversión.',
       price: '$600 POR DÍA'
     },
     {
       image: '../../img/velero3.jpg',
       title: 'RELAX SUPREMO',
-      description: 'Disfruta de la estabilidad y el espacio adicional que ofrecen nuestros catamaranes. "RELAX SUPREMO" es perfecto para familias y grupos grandes que buscan relajarse en el agua con todas las comodidades necesarias para una experiencia placentera.',
+      description: 'Disfruta de la estabilidad y el espacio de nuestros catamaranes. "RELAX SUPREMO" es ideal para familias y grupos que buscan relajarse con todas las comodidades en el agua.',
       price: '$800 POR DÍA'
     },
     {
       image: '../../img/pesca1.jpg',  
       title: 'CAMPEÓN DEL MAR',
-      description: 'Equipados con todo lo necesario para una exitosa jornada de pesca, "CAMPEÓN DEL MAR" es ideal para los entusiastas de la pesca deportiva que buscan una experiencia completa y satisfactoria en el mar. ¡Prepárate para atrapar al pez más grande!',
+      description: 'Equipado con todo para una jornada de pesca exitosa, "CAMPEÓN DEL MAR" es perfecto para los amantes de la pesca deportiva que buscan una experiencia completa. ¡Atrapa al pez más grande!',
       price: '$500 POR DÍA'
     },
     {

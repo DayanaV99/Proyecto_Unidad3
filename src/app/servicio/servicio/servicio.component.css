@@ -1,3 +1,6 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
 /* Estilo general para el carrusel */
 .carousel {
     width: 100%;
@@ -13,12 +16,14 @@
 .carousel img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen ocupe todo el espacio sin distorsionarse */
-    object-position: center; /* Centra la imagen dentro del contenedor */
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease-in-out; /* Transición más suave para zoom */
 }
 
 /* Sección: Conoce nuestra flota */
 .fleet-section {
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 50px 0;
 }
@@ -27,24 +32,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Espacio entre los elementos para mejor adaptabilidad */
+    gap: 20px;
 }
 
 .fleet-item {
     position: relative;
-    width: 300px; /* Tamaño consistente para las imágenes */
-    height: 200px; /* Tamaño consistente para las imágenes */
+    width: 300px;
+    height: 200px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición más rápida */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .fleet-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Para que las imágenes se ajusten al contenedor sin distorsión */
-    object-position: center; /* Centra la imagen dentro del contenedor */
-    transition: transform 0.3s ease; /* Transición más rápida para la imagen */
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
 }
 
 .fleet-item .overlay {
@@ -62,7 +67,7 @@
 }
 
 .fleet-item:hover img {
-    transform: scale(1.1); /* Agranda la imagen al pasar el ratón */
+    transform: scale(1.1);
 }
 
 .fleet-item:hover .overlay {
@@ -70,57 +75,62 @@
 }
 
 .fleet-item:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
-    transform: scale(1.05); /* Agranda la tarjeta al pasar el ratón */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
 }
 
+/* Texto en overlay */
 .overlay .text {
     color: white;
-    font-size: 18px; /* Tamaño de fuente ajustado */
+    font-size: 18px;
     text-align: center;
+    transition: opacity 0.3s ease; /* Transición suave del texto */
 }
 
-/* Sección: Embarcate hoy mismo */
+/* Sección: Embárcate hoy mismo */
 .rental-section {
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 50px 0;
     position: relative;
     overflow: hidden;
+    padding: 0 10px; /* Ajuste del padding para asegurar que el contenido no se salga en pantallas pequeñas */
 }
 
 .rental-cards-wrapper {
     overflow: hidden;
-    height: 550px; /* Aumenta la altura del contenedor para más espacio */
+    position: relative;
+    height: auto; /* Ajusta la altura automáticamente */
 }
 
 .rental-cards {
     display: flex;
-    flex-wrap: nowrap; /* No permite que las tarjetas se envuelvan */
-    animation: slide 20s linear infinite; /* Aplicar animación de deslizamiento */
+    flex-wrap: nowrap;
+    animation: slide 20s linear infinite;
 }
 
 .rental-card {
     border: 1px solid #ddd;
     padding: 20px;
-    width: 300px; /* Tamaño uniforme para todas las tarjetas */
-    height: 500px; /* Altura uniforme para asegurar la alineación */
-    margin-right: 20px; /* Espacio entre tarjetas ajustado para mejor adaptabilidad */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Transiciones más rápidas */
-    flex-shrink: 0; /* Evita que las tarjetas se encojan */
+    width: 300px;
+    height: 550px; /* Ajusta la altura para asegurar consistencia */
+    margin-right: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Distribuye el contenido uniformemente */
-    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del contenedor */
+    justify-content: space-between;
+    box-sizing: border-box;
     position: relative;
 }
 
 .rental-card img {
     width: 100%;
-    height: 200px; /* Altura fija para las imágenes */
-    object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
-    object-position: center; /* Centra la imagen dentro del contenedor */
-    transition: transform 0.3s ease; /* Transición más rápida para la imagen */
+    height: 200px; /* Ajusta la altura para mantener consistencia */
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 15px; /* Espacio entre la imagen y el contenido */
 }
 
 .rental-card h3 {
@@ -132,8 +142,9 @@
 .rental-card p {
     text-align: justify;
     margin: 10px 0;
-    flex-grow: 1; /* Permite que la descripción ocupe el espacio restante */
-    min-height: 80px; /* Altura mínima para alinear el texto uniformemente */
+    flex-grow: 1;
+    font-size: 14px;
+    min-height: 100px; /* Aumenta la altura mínima para evitar superposiciones */
 }
 
 .price {
@@ -141,6 +152,7 @@
     font-size: 18px;
     font-weight: bold;
     margin: 10px 0;
+    align-self: center;
 }
 
 button {
@@ -149,14 +161,15 @@ button {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 10px;
-    width: 100%; /* Hace que el botón ocupe todo el ancho de la tarjeta */
-    box-sizing: border-box; /* Incluye el padding en el tamaño total del botón */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Animación de deslizamiento continuo */
@@ -165,83 +178,93 @@ button:hover {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%); /* Desplaza el contenido fuera del contenedor */
+        transform: translateX(-100%);
     }
 }
 
 /* Detener la animación cuando el ratón está sobre el contenedor */
 .rental-cards-wrapper:hover .rental-cards {
-    animation-play-state: paused; /* Detiene la animación cuando el ratón está sobre el contenedor */
+    animation-play-state: paused;
 }
 
 /* Añadir animación al pasar el ratón sobre una tarjeta */
 .rental-card:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada para resaltar la tarjeta */
-    transform: scale(1.05); /* Aumenta la tarjeta de manera más notoria */
-    z-index: 2; /* Asegura que la tarjeta resaltada quede por encima de las demás */
-    filter: brightness(1.2); /* Añade un brillo adicional a la tarjeta */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+    z-index: 2;
+    filter: brightness(1.2);
+    transition: transform 0.4s ease, box-shadow 0.3s ease, filter 0.5s ease;
 }
 
 /* Media Queries para Responsividad */
 @media (max-width: 1024px) {
     .rental-card {
-        max-width: 280px; /* Tamaño ajustado para pantallas grandes */
-        height: 450px; /* Altura ajustada para asegurar la alineación en pantallas grandes */
+        max-width: 280px;
+        height: auto; /* Ajuste automático para evitar distorsión */
     }
 
     .rental-card img {
-        height: 180px; /* Tamaño ajustado para las imágenes */
+        height: 180px; /* Mantiene la proporción y evita imágenes largas */
     }
 }
 
 @media (max-width: 768px) {
     .rental-card {
-        max-width: 250px; /* Tamaño ajustado para pantallas medianas */
-        height: 400px; /* Altura ajustada para asegurar la alineación en pantallas medianas */
+        max-width: 250px;
+        height: auto; /* Ajuste automático para evitar distorsión */
     }
 
     .rental-card img {
-        height: 160px; /* Tamaño ajustado para las imágenes */
-    }
-
-    .fleet-gallery {
-        gap: 15px; /* Espacio entre los elementos en pantallas medianas */
-    }
-
-    .fleet-item {
-        width: 280px; /* Tamaño ajustado para las imágenes en pantallas medianas */
-        height: 180px; /* Tamaño ajustado para las imágenes en pantallas medianas */
-    }
-
-    .overlay .text {
-        font-size: 16px; /* Tamaño de fuente ajustado para mejor legibilidad en pantallas medianas */
-    }
-}
-
-@media (max-width: 480px) {
-    .rental-section h2 {
-        font-size: 16px; /* Tamaño de fuente ajustado para pantallas pequeñas */
+        height: 160px; /* Mantiene la proporción y evita imágenes largas */
     }
 
     .rental-card h3 {
-        font-size: 14px; /* Tamaño de fuente ajustado para pantallas pequeñas */
+        font-size: 16px;
+    }
+
+    .rental-card p {
+        font-size: 14px; /* Ajusta el tamaño del texto */
     }
 
     .price {
-        font-size: 14px; /* Tamaño de fuente ajustado para pantallas pequeñas */
+        font-size: 16px;
     }
 
     button {
         padding: 8px 16px;
-        font-size: 12px; /* Tamaño de fuente ajustado para pantallas pequeñas */
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rental-section {
+        padding: 0; /* Sin padding en pantallas pequeñas para maximizar el uso del espacio */
     }
 
-    .fleet-item {
-        width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
-        height: auto; /* Ajusta la altura automáticamente */
+    .rental-card {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px; /* Espaciado vertical entre tarjetas */
     }
 
-    .overlay .text {
-        font-size: 14px; /* Tamaño de fuente ajustado para mejor legibilidad en pantallas pequeñas */
+    .rental-card img {
+        height: 150px; /* Mantiene la proporción de la imagen y evita que se estire */
+    }
+
+    .rental-card h3 {
+        font-size: 14px;
+    }
+
+    .rental-card p {
+        font-size: 12px; /* Ajusta el tamaño del texto */
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 12px;
     }
 }
