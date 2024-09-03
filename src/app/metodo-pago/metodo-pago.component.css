@@ -30,6 +30,8 @@
 form {
   display: flex;
   flex-wrap: wrap;
+  margin: 0; /* Asegúrate de que el formulario no tenga márgenes adicionales */
+  box-sizing: border-box; /* Asegúrate de que el box-sizing esté establecido para manejar el padding y el borde */
 }
 
 .section {
@@ -59,12 +61,13 @@ form {
 }
 
 .form-control {
-  width: 100%;
+  width: calc(100% - 2rem); /* Ajusta el ancho para tener en cuenta el padding */
   padding: 0.75rem 1rem;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 6px;
   transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
 
 .form-control:focus {
@@ -96,7 +99,7 @@ form {
 }
 
 .btn-primary {
-  background-color: #002b49;
+  background-color:  #045cba;
   color: #fff;
 }
 
@@ -105,8 +108,8 @@ form {
 }
 
 .btn-secondary {
-  background-color: #f3f3f3;
-  color: #002b49;
+  background-color:  #045cba;
+  color: #fff;
 }
 
 .btn-secondary:hover {
