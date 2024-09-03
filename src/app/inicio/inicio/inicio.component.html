@@ -2,15 +2,14 @@
 
 <div class="container">
   <div class="left-image">
-    <img src="../../img/inicio1.jpg" alt="Imagen izquierda" class="card-image" style="width: 620px;" />
+    <img src="../../img/inicio1.jpg" alt="Imagen izquierda" class="card-image large-image" />
   </div>
   <div class="right-card">
     <div class="card">
       <div class="card-images">
-        <img src="../../img/inicio2.jpg" alt="Imagen derecha" class="card-image" style="width: 217px; height: 170px;" />
-        <img src="../../img/inicio3.jpg" alt="Imagen adicional" class="card-image"
-          style="width: 217px; height: 170px;" />
-        <img src="../../img/inicio4.jpg" alt="Otra imagen" class="card-image" style="width: 218px; height: 170px;" />
+        <img src="../../img/inicio2.jpg" alt="Imagen derecha" class="card-image small-image" />
+        <img src="../../img/inicio3.jpg" alt="Imagen adicional" class="card-image small-image" />
+        <img src="../../img/inicio4.jpg" alt="Otra imagen" class="card-image small-image" />
       </div>
       <div class="card-content">
         <h3>Bienvenidos a Navega Salinas!</h3>
@@ -19,9 +18,10 @@
           Nos complace recibirte en nuestra plataforma de alquiler de barcos en la hermosa ciudad de Salinas. Aquí,
           podrás encontrar una selección de embarcaciones de alta calidad, listas para brindarte una experiencia
           inolvidable en el mar. Estamos aquí para ayudarte a encontrar el barco perfecto de tus sueños para tus
-          necesidades.
-          Explora nuestras opciones y disfruta de la belleza y aventura que el océano tiene para ofrecer. ¡Bienvenido a
-          bordo y a disfrutar del mar con Navega Salinas! </p>
+          necesidades. Explora nuestras opciones y disfruta de la belleza y aventura que el océano tiene para ofrecer.
+          ¡Bienvenido a bordo y a disfrutar del mar con Navega Salinas!
+        </p>
+        <button routerLink="/servicio" class="btn btn-primary">Más Información...</button>
       </div>
     </div>
   </div>
@@ -29,29 +29,16 @@
 
 
 
+
 <!-- SECCION DE INFORMACION -->
 <div class="custom-card-container">
-  <div class="custom-card">
-    <img src="../../../../img/info1.jpg" alt="Salinas">
-    <h3>Salinas</h3>
-    <p>Salinas es una ciudad costera ubicada en la provincia de Santa Elena, Ecuador. Conocida por sus hermosas playas y su vibrante vida nocturna, Salinas es un destino turístico popular tanto para locales como para extranjeros. Sus principales atractivos incluyen la playa de Chipipe, el Malecón de Salinas, y la Puntilla de Santa Elena, un lugar perfecto para practicar deportes acuáticos y disfrutar del sol.</p>
-  </div>
-  <div class="custom-card">
-    <img src="../../../../img/info2.jpg" alt="Población">
-    <h3>Población</h3>
-    <p>La población de Salinas está compuesta por una mezcla diversa de residentes locales y expatriados que han encontrado en esta ciudad un lugar ideal para vivir. La comunidad es acogedora y está caracterizada por su hospitalidad. Los residentes disfrutan de un estilo de vida relajado, con acceso a todas las comodidades modernas y un entorno natural impresionante.</p>
-  </div>
-  <div class="custom-card">
-    <img src="../../../../img/info3.jpg" alt="Gastronomía">
-    <h3>Gastronomía</h3>
-    <p>La gastronomía en Salinas es una deliciosa mezcla de sabores locales e internacionales. Los mariscos frescos son una especialidad, con platos como el ceviche, camarones al ajillo, y pescado frito siendo muy populares. Además, la ciudad cuenta con una variedad de restaurantes que ofrecen desde cocina tradicional ecuatoriana hasta opciones gourmet internacionales.</p>
-  </div>
-  <div class="custom-card">
-    <img src="../../../../img/info4.jpg" alt="Turismo">
-    <h3>Turismo</h3>
-    <p>El turismo es vital en Salinas. Los visitantes disfrutan de deportes acuáticos como surf, jet ski y pesca deportiva. La ciudad ofrece una animada vida nocturna con numerosos bares y discotecas. Destacan el Malecón de Salinas, el Museo de Ballenas y las excursiones en yate para observar la vida marina.</p>
+  <div class="custom-card" *ngFor="let cardInfo of cardInfos">
+    <img [src]="cardInfo.imgSrc" [alt]="cardInfo.altText">
+    <h3>{{ cardInfo.title }}</h3>
+    <p>{{ cardInfo.description }}</p>
   </div>
 </div>
+
 
 <!-- SECCION DE UBICACION -->
 <div class="map-container">

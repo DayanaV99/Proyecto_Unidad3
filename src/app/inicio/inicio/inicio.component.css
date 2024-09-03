@@ -1,23 +1,35 @@
-h4,h3{
+/* TIPOGRAFÍA Y TÍTULOS */
+h4, h3 {
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
 
+/* CONTENEDOR PRINCIPAL */
 .container {
-  display: flex;
+  display: flex; /* Utiliza flexbox para alinear los elementos en fila */
   gap: 20px; /* Espacio entre la imagen y la tarjeta */
   margin: 20px;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  align-items: flex-start; /* Alinea los elementos al inicio */
 }
 
-.left-image img {
-  width: 100%; /* Asegura que la imagen izquierda ocupe todo el espacio disponible */
+/* IMAGEN IZQUIERDA */
+.left-image {
+  flex: 1; /* Toma todo el espacio disponible restante */
+  max-width: 50%; /* Limita el ancho máximo a 50% */
+}
+
+.large-image {
+  width: 100%; /* Imagen ocupa todo el espacio del contenedor */
   height: auto;
   border-radius: 8px; /* Bordes redondeados opcionales */
 }
 
+/* TARJETA DERECHA */
 .right-card {
-  flex: 1; /* Permite que la tarjeta ocupe el espacio restante */
+  flex: 1; /* Toma todo el espacio disponible restante */
+  max-width: 50%; /* Limita el ancho máximo a 50% */
 }
 
 .card {
@@ -28,91 +40,107 @@ h4,h3{
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden; /* Asegura que el contenido no se desborde */
   font-size: 14px;
-
+  padding: 20px; /* Añade padding para el contenido */
 }
 
-.card-image {
-  width: 100%;
+/* Contenedor de las Imágenes Pequeñas */
+.card-images {
+  display: flex;
+  justify-content: space-between; /* Distribuye equitativamente las imágenes */
+}
+
+/* Imágenes Pequeñas */
+.small-image {
+  width: calc(33.33%); /* Ajuste para que tres imágenes quepan en una fila */
   height: auto;
+  object-fit: cover; /* Asegura que la imagen se ajuste al tamaño definido */
+  border: none; /* Elimina bordes adicionales */
+  display: block; /* Asegura que no haya espacios abajo como elementos inline */
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al hacer hover */
-}
 
-.card-content {
-  padding: 20px;
-}
 
+/* CONTENIDO DE LA TARJETA */
 .card-content h3 {
   margin-top: 0;
   font-weight: bold;
+  text-align: center;
 }
 
 .card-content p {
-  margin: 10px 0 0 0;
+  margin: 5px 0 3px 0; /* Añade un margen inferior para el espacio con el botón */
   line-height: 1.6;
-}
-
-p{
-  font-family: 'Poppins', sans-serif;
   text-align: justify;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* INFORMACION ESTILOS */
+/* BOTÓN */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  float: right; /* Mueve el botón a la derecha */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  margin-top: 10px; /* Espacio superior para separar del texto */
+}
+
+/* CONTENEDOR DE LAS TARJETAS */
 .custom-card-container {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
+  display: flex; /* Utiliza Flexbox para alinear en fila */
+  justify-content: space-between; /* Distribuye el espacio equitativamente */
+  gap: 20px; /* Espacio entre las tarjetas */
   margin: 20px;
-  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
-  border: 5px;
+  flex-wrap: nowrap; /* No permite que las tarjetas se envuelvan en pantallas grandes */
 }
 
+/* TARJETA INDIVIDUAL */
 .custom-card {
   background-color: #fff;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.1); 
-
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 20%;
+  width: calc(25% - 15px); /* Cuatro tarjetas en una fila, restando el gap */
   padding: 20px;
+  flex: 0 1 calc(25% - 15px); /* Mantiene el tamaño de las tarjetas */
 }
 
+/* IMAGEN EN LA TARJETA */
 .custom-card img {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* Asegura que la imagen se ajuste dentro del círculo sin deformarse */
   margin-bottom: 15px;
   transition: transform 0.3s ease; /* Transición suave para el zoom */
 }
 
+/* TITULO DE LA TARJETA */
 .custom-card h3 {
   margin-top: 0;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
 }
 
+/* TEXTO DE LA TARJETA */
 .custom-card p {
   font-family: 'Poppins', sans-serif;
   text-align: justify;
   font-size: 14px;
 }
 
-.custom-card img {
-  border-radius: 50%; /* Hace que la imagen sea redonda */
-  width: 200px;
-  height: 200px;
-  object-fit: cover; /* Asegura que la imagen se ajuste dentro del círculo sin deformarse */
-  margin-bottom: 15px;
-  transition: transform 0.3s ease; /* Transición suave para el zoom */
-}
-
-/* Animación al hacer hover */
+/* EFECTO HOVER EN TARJETA */
 .custom-card:hover {
   transform: translateY(-10px); /* Eleva la tarjeta */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
@@ -122,35 +150,69 @@ p{
   transform: scale(1.1); /* Zoom de la imagen al hacer hover */
 }
 
-/* Animación de aparición */
-@keyframes custom-fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+
+/* Para pantallas medianas y pequeñas */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column; /* Coloca los elementos en una columna en pantallas medianas */
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .left-image,
+  .right-card {
+    flex: none; /* Permite que las imágenes y la tarjeta tomen todo el ancho disponible */
+    max-width: 100%; /* Asegura que ocupen todo el ancho en pantallas más pequeñas */
+  }
+
+  .large-image {
+    width: 100%; /* Imagen ocupa todo el ancho disponible */
+  }
+
+  .card-images {
+    flex-direction: row; /* Mantiene las imágenes en una fila */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan si es necesario */
+    justify-content: center; /* Centra las imágenes en pantallas más pequeñas */
+    gap: 10px; /* Espacio entre las imágenes */
+  }
+
+  .small-image {
+    width: calc(33.333% - 10px); /* Imágenes ocupan un tercio del ancho disponible con espacio entre ellas */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  .custom-card-container {
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas medianas */
+  }
+
+  .custom-card {
+    width: calc(50% - 20px); /* Dos tarjetas por fila en pantallas medianas */
+    flex: 1 1 calc(50% - 20px); /* Ajuste responsivo */
   }
 }
 
-.custom-card {
-  animation: custom-fadeInUp 0.5s ease-out;
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .custom-card {
+    width: 100%; /* Una tarjeta por fila en pantallas pequeñas */
+    flex: 1 1 100%; /* Ajuste responsivo */
+  }
 }
 
+@media (max-width: 480px) {
+  .custom-card {
+    width: 100%; /* Una tarjeta por fila en pantallas muy pequeñas */
+  }
 
-/* UBICACION ESTILOS */
-.map-container {
-  margin: 20px auto;
-  max-width: 1200px; /* Ajusta el ancho máximo del mapa */
-  height: 450px; /* Ajusta la altura del mapa */
-  border-radius: 8px; /* Opcional: Bordes redondeados */
-  overflow: hidden; /* Asegura que el mapa se ajuste a los bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
+  .small-image {
+    width: 100%; /* Imágenes ocupan todo el ancho disponible en pantallas pequeñas */
+    margin-bottom: 10px; /* Añade espacio entre imágenes en pantallas pequeñas */
+  }
 
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none; /* Elimina el borde del iframe */
+  .card-content p {
+    margin-bottom: 20px; /* Ajusta el margen inferior en pantallas pequeñas */
+  }
+
+  .btn-primary {
+    width: 100%; /* Botón ocupa todo el ancho disponible en pantallas pequeñas */
+  }
 }
