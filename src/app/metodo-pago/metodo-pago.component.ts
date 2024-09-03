@@ -20,6 +20,7 @@ export class MetodoPagoComponent {
   montoAPagar: string = '';
 
   private registroCount: number = 0; // Contador de registros
+  private registros: string[] = []; // Lista para almacenar los registros
 
   constructor(private router: Router) { } // Inyectar Router
 
@@ -29,14 +30,18 @@ export class MetodoPagoComponent {
 
   pagar() {
     // Implementa la lógica para procesar el pago
-    console.log('Nombre:', this.nombre);
-    console.log('Apellido:', this.apellido);
-    console.log('Ciudad:', this.ciudad);
-    console.log('Código Postal:', this.codigoPostal);
-    console.log('País:', this.pais);
-    console.log('Número de tarjeta:', this.numeroTarjeta);
-    console.log('CVV:', this.cvv);
-    console.log('Monto a Pagar:', this.montoAPagar);
+    const registro = `
+    Nombre: ${this.nombre}
+    Apellido: ${this.apellido}
+    Ciudad: ${this.ciudad}
+    Código Postal: ${this.codigoPostal}
+    País: ${this.pais}
+    Número de tarjeta: ${this.numeroTarjeta}
+    CVV: ${this.cvv}
+    Monto a Pagar: ${this.montoAPagar}`;
+
+    // Añadir el registro a la lista
+    this.registros.push(registro);
 
     // Incrementar el contador de registros
     this.registroCount++;
@@ -58,16 +63,8 @@ export class MetodoPagoComponent {
   }
 
   downloadFile() {
-    // Generar el contenido del archivo
-    const data = `
-    Nombre: ${this.nombre}
-    Apellido: ${this.apellido}
-    Ciudad: ${this.ciudad}
-    Código Postal: ${this.codigoPostal}
-    País: ${this.pais}
-    Número de tarjeta: ${this.numeroTarjeta}
-    CVV: ${this.cvv}
-    Monto a Pagar: ${this.montoAPagar}`;
+    // Generar el contenido del archivo con todos los registros almacenados
+    const data = this.registros.join('\n\n');
 
     // Crear un Blob con el contenido del archivo
     const blob = new Blob([data], { type: 'text/plain;charset=utf-8' });
