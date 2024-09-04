@@ -3,7 +3,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 5px 5px; */
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
@@ -30,15 +29,18 @@
     font-weight: 600; 
     font-size: 16px;
     border-radius: 4px;
-
 }
 
 .nav-links a:hover {
     color:  #351dc0;
 }
 
-
 /* Estilo para el enlace activo */
+.nav-links a.active-link {
+    color: #351dc0; /* Color del texto para el enlace activo */
+    font-weight: bold; /* Hacer el texto más grueso para resaltarlo */
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -56,18 +58,16 @@
     }
 }
 
-
 /* FOOTER DE LA PAGINA */
 .footer {
     background-color: #351dc0;
-    /* Color del fondo */
     color: white;
     text-align: center;
     padding: 20px;
     position: relative;
     bottom: 0;
     width: 100%;
-    font-family: 'Poppins', sans-serif; /* Aplicando la fuente al footer */
+    font-family: 'Poppins', sans-serif;
 }
 
 .footer .social-icons {
@@ -111,34 +111,30 @@
     }
 }
 
-
-
 /* LOGO */
 .logo {
     display: flex;
     align-items: center; /* Alinea verticalmente el logo y el texto */
-  }
-  
-  .logo img {
-    margin-right: 10px; /* Opcional: espacio extra entre el logo y el texto */
-    width: 100px; /* Reduce el tamaño del logo si es necesario */
-    height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
-  }
-  
-  .logo span {
-    font-size: 18px; /* Ajusta el tamaño del texto si es necesario */
-    font-weight: bold; /* Haz que el texto sea más prominente */
-    color: #333; /* Color del texto */
-  }
+}
 
-  @media (max-width: 480px) {
+.logo img {
+    margin-right: 10px; /* Espacio extra entre el logo y el texto */
+    width: 100px; /* Tamaño del logo */
+    height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+}
+
+.logo span {
+    font-size: 18px; /* Tamaño del texto */
+    font-weight: bold; /* Texto más prominente */
+    color: #333; /* Color del texto */
+}
+
+@media (max-width: 480px) {
     .logo img {
-        width: 80px; /* Tamaño más pequeño del logo en pantallas muy pequeñas */
+        width: 80px; /* Tamaño más pequeño del logo en pantallas pequeñas */
     }
 
     .logo span {
         font-size: 16px;
     }
 }
-
-  
