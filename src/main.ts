@@ -28,3 +28,39 @@ bootstrapApplication(AppComponent, {
           })
   ]
 }).catch(err => console.error(err));
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    const swUrl = '/ngsw-worker.js'; // La URL del Service Worker generado por Angular
+    navigator.serviceWorker.register(swUrl).then((registration) => {
+      console.log('Service Worker registrado con el alcance:', registration.scope);
+
+      // Escuchar los eventos del Service Worker
+      registration.addEventListener('updatefound', () => {
+        const installingWorker = registration.installing;
+        if (installingWorker) {
+          installingWorker.addEventListener('statechange', () => {
+            switch (installingWorker.state) {
+              case 'installed':
+                console.log('Service Worker instalado');
+                break;
+              case 'activating':
+                console.log('Service Worker activando');
+                break;
+              case 'activated':
+                console.log('Service Worker activado');
+                break;
+              case 'redundant':
+                console.log('Service Worker redundante');
+                break;
+              default:
+                console.log('Estado del Service Worker:', installingWorker.state);
+            }
+          });
+        }
+      });
+    }).catch((error) => {
+      console.error('Error al registrar el Service Worker:', error);
+    });
+  });
+}
