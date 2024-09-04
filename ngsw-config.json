@@ -12,7 +12,9 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js",
-          "/assets**"
+          "/assets**",
+          "/img/contactoayuda.png",
+          "!/img/**"  
         ]
       }
     },
@@ -22,7 +24,9 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)",
+          "/img/contactoayuda.png",
+          "!/img/**"    
         ]
       }
     }
