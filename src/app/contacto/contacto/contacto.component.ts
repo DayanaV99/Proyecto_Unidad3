@@ -57,8 +57,8 @@ export class ContactoComponent {
  
   // Método para obtener las reseñas que se mostrarán en la página actual
    getPagedResenas() {
-    const start = this.currentPage * this.itemsPerPage; // Índice de inicio para el slice
-    const end = start + this.itemsPerPage; // Índice final para el slice
+    const start = this.currentPage * this.itemsPerPage; // Calcula el índice de inicio de las reseñas que se mostrarán en la página actual
+    const end = start + this.itemsPerPage; // Calcula el índice final de las reseñas para la página actual
     return this.resenas.slice(start, end); // Retorna las reseñas correspondientes a la página actual
    }
  
